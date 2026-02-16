@@ -227,17 +227,17 @@ with col_z:
 
 st.divider()
 
-if st.button("Generar PDF", type="primary", use_container_width=True):
-    pdf_buf = generate_pdf(
-        titulo, cuerpo, ciudad, fecha,
-        nombre_firma, cargo_firma, org_firma,
-        email, celular, direccion,
-    )
-    st.download_button(
-        label="Descargar PDF",
-        data=pdf_buf,
-        file_name="constancia.pdf",
-        mime="application/pdf",
-        use_container_width=True,
-    )
-    st.success("PDF generado correctamente.")
+pdf_buf = generate_pdf(
+    titulo, cuerpo, ciudad, fecha,
+    nombre_firma, cargo_firma, org_firma,
+    email, celular, direccion,
+)
+
+st.download_button(
+    label="Generar PDF",
+    data=pdf_buf,
+    file_name="constancia.pdf",
+    mime="application/pdf",
+    type="primary",
+    use_container_width=True,
+)

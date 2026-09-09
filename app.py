@@ -1,4 +1,5 @@
 import io
+from pathlib import Path
 import streamlit as st
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.colors import HexColor
@@ -21,13 +22,14 @@ PINK = HexColor("#e84393")
 DARK = HexColor("#2d3436")
 LINK_BLUE = HexColor("#0000EE")
 
-FONT_DIR = "/usr/share/fonts/truetype/crosextra"
+APP_DIR = Path(__file__).resolve().parent
+FONT_DIR = APP_DIR / "fonts"
 pdfmetrics.registerFont(TTFont("Cambria", f"{FONT_DIR}/Caladea-Regular.ttf"))
 pdfmetrics.registerFont(TTFont("Cambria-Bold", f"{FONT_DIR}/Caladea-Bold.ttf"))
 FONT = "Cambria"
 FONT_BOLD = "Cambria-Bold"
 
-LOGO_PATH = "logo.jpeg"
+LOGO_PATH = str(APP_DIR / "logo.jpeg")
 
 
 # ---------------------------------------------------------------------------

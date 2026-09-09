@@ -38,7 +38,7 @@ DARK = HexColor("#2d3436")       # dark text color
 LINK_BLUE = HexColor("#0000EE")  # hyperlink color
 
 # Fonts – Caladea is a metric-compatible Cambria replacement
-FONT_DIR = "/usr/share/fonts/truetype/crosextra"
+FONT_DIR = os.path.join(os.path.dirname(__file__), "fonts")
 pdfmetrics.registerFont(TTFont("Cambria", f"{FONT_DIR}/Caladea-Regular.ttf"))
 pdfmetrics.registerFont(TTFont("Cambria-Bold", f"{FONT_DIR}/Caladea-Bold.ttf"))
 
